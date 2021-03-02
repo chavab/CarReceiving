@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F36CEC8E-613D-4320-AC46-9D39A7C8BDBA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WCFCarReceivingAppTest</RootNamespace>
+    <AssemblyName>WCFCarReceivingAppTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\chavab\Desktop\pub\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>12FA16F96FCAC51AFE86C560F764B99ADC2272CA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WCFCarReceivingAppTest_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AccessDMS">
+      <HintPath>DLLS\AccessDMS.dll</HintPath>
+    </Reference>
+    <Reference Include="AccessToProcesses">
+      <HintPath>DLLS\AccessToProcesses.dll</HintPath>
+    </Reference>
+    <Reference Include="AccessToProcFunc, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\AccessToProcFunc.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.AcroPDFLib">
+      <HintPath>DLLS\AxInterop.AcroPDFLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CampaignManager">
+      <HintPath>DLLS\CampaignManager.dll</HintPath>
+    </Reference>
+    <Reference Include="CarRecivingApp">
+      <HintPath>DLLS\CarRecivingApp.dll</HintPath>
+    </Reference>
+    <Reference Include="CarRecivingApp.Prototypes">
+      <HintPath>DLLS\CarRecivingApp.Prototypes.dll</HintPath>
+    </Reference>
+    <Reference Include="ChampFiles">
+      <HintPath>DLLS\ChampFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="ChampSigner">
+      <HintPath>DLLS\ChampSigner.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassChampPaging">
+      <HintPath>DLLS\ClassChampPaging.dll</HintPath>
+    </Reference>
+    <Reference Include="clsAgreements">
+      <HintPath>DLLS\clsAgreements.dll</HintPath>
+    </Reference>
+    <Reference Include="clsCommissionComments">
+      <HintPath>DLLS\clsCommissionComments.dll</HintPath>
+    </Reference>
+    <Reference Include="clsContractCustomersDB">
+      <HintPath>DLLS\clsContractCustomersDB.dll</HintPath>
+    </Reference>
+    <Reference Include="clsCustomer">
+      <HintPath>DLLS\clsCustomer.dll</HintPath>
+    </Reference>
+    <Reference Include="clsDB">
+      <HintPath>DLLS\clsDB.dll</HintPath>
+    </Reference>
+    <Reference Include="clsDllLoader">
+      <HintPath>DLLS\clsDllLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="clsExeLog">
+      <HintPath>DLLS\clsExeLog.dll</HintPath>
+    </Reference>
+    <Reference Include="ClsGant">
+      <HintPath>DLLS\ClsGant.dll</HintPath>
+    </Reference>
+    <Reference Include="ClsGeneral">
+      <HintPath>DLLS\ClsGeneral.dll</HintPath>
+    </Reference>
+    <Reference Include="ClsHanachot">
+      <HintPath>DLLS\ClsHanachot.dll</HintPath>
+    </Reference>
+    <Reference Include="clsHanachotDB">
+      <HintPath>DLLS\clsHanachotDB.dll</HintPath>
+    </Reference>
+    <Reference Include="clsHatmaot">
+      <HintPath>DLLS\clsHatmaot.dll</HintPath>
+    </Reference>
+    <Reference Include="clsHelpUtil">
+      <HintPath>DLLS\clsHelpUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="clsMaatafotComments">
+      <HintPath>DLLS\clsMaatafotComments.dll</HintPath>
+    </Reference>
+    <Reference Include="clsMaatafotShichrur">
+      <HintPath>DLLS\clsMaatafotShichrur.dll</HintPath>
+    </Reference>
+    <Reference Include="clsMaatafotShichrurAS400">
+      <HintPath>DLLS\clsMaatafotShichrurAS400.dll</HintPath>
+    </Reference>
+    <Reference Include="clsMaatafotShichrurAS400New">
+      <HintPath>DLLS\clsMaatafotShichrurAS400New.dll</HintPath>
+    </Reference>
+    <Reference Include="clsMail">
+      <HintPath>DLLS\clsMail.dll</HintPath>
+    </Reference>
+    <Reference Include="clsMergeWord">
+      <HintPath>DLLS\clsMergeWord.dll</HintPath>
+    </Reference>
+    <Reference Include="clsODBC">
+      <HintPath>DLLS\clsODBC.dll</HintPath>
+    </Reference>
+    <Reference Include="clsOutlookEmail">
+      <HintPath>DLLS\clsOutlookEmail.dll</HintPath>
+    </Reference>
+    <Reference Include="clsPotentialDB">
+      <HintPath>DLLS\clsPotentialDB.dll</HintPath>
+    </Reference>
+    <Reference Include="clsPrintGrid">
+      <HintPath>DLLS\clsPrintGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="clsPrintPeiluyot">
+      <HintPath>DLLS\clsPrintPeiluyot.dll</HintPath>
+    </Reference>
+    <Reference Include="clsSignedPdfs">
+      <HintPath>DLLS\clsSignedPdfs.dll</HintPath>
+    </Reference>
+    <Reference Include="clsSplitPDFs">
+      <HintPath>DLLS\clsSplitPDFs.dll</HintPath>
+    </Reference>
+    <Reference Include="clsStatic">
+      <HintPath>DLLS\clsStatic.dll</HintPath>
+    </Reference>
+    <Reference Include="clsStopWatchTimer">
+      <HintPath>DLLS\clsStopWatchTimer.dll</HintPath>
+    </Reference>
+    <Reference Include="clsSurvey">
+      <HintPath>DLLS\clsSurvey.dll</HintPath>
+    </Reference>
+    <Reference Include="ClsUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\ClsUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="clsXMLLDA">
+      <HintPath>DLLS\clsXMLLDA.dll</HintPath>
+    </Reference>
+    <Reference Include="ComInfra">
+      <HintPath>DLLS\ComInfra.dll</HintPath>
+    </Reference>
+    <Reference Include="CommitmentsManager">
+      <HintPath>DLLS\CommitmentsManager.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonAPI">
+      <HintPath>DLLS\CommonAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonSharedData">
+      <HintPath>DLLS\CommonSharedData.dll</HintPath>
+    </Reference>
+    <Reference Include="ContactCenter.Common">
+      <HintPath>DLLS\ContactCenter.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CRM_Customers.Prototypes">
+      <HintPath>DLLS\CRM_Customers.Prototypes.dll</HintPath>
+    </Reference>
+    <Reference Include="CRM_Processes">
+      <HintPath>DLLS\CRM_Processes.dll</HintPath>
+    </Reference>
+    <Reference Include="CRM_Processes.Models">
+      <HintPath>DLLS\CRM_Processes.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomerBenefitsBlock">
+      <HintPath>DLLS\CustomerBenefitsBlock.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscountAuthorization">
+      <HintPath>DLLS\DiscountAuthorization.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscountsApp.Prototypes">
+      <HintPath>DLLS\DiscountsApp.Prototypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Encryption">
+      <HintPath>DLLS\Encryption.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>DLLS\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>DLLS\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
+      <HintPath>DLLS\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4">
+      <HintPath>DLLS\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GeneralControls">
+      <HintPath>DLLS\GeneralControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Core">
+      <HintPath>DLLS\Gnostice.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Free.Documents">
+      <HintPath>DLLS\Gnostice.Free.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.Free.Documents.Controls.WinForms">
+      <HintPath>DLLS\Gnostice.Free.Documents.Controls.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.XtremeFontEngine.4.0">
+      <HintPath>DLLS\Gnostice.XtremeFontEngine.4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Gnostice.XtremeImageEngine">
+      <HintPath>DLLS\Gnostice.XtremeImageEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageComboBox">
+      <HintPath>DLLS\ImageComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zlib">
+      <HintPath>DLLS\Ionic.Zlib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>DLLS\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>DLLS\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PasswordAuth">
+      <HintPath>DLLS\PasswordAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-wpf">
+      <HintPath>DLLS\PdfSharp-wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresenterBL">
+      <HintPath>DLLS\PresenterBL.dll</HintPath>
+    </Reference>
+    <Reference Include="PresenterCommon">
+      <HintPath>DLLS\PresenterCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="PresenterDal">
+      <HintPath>DLLS\PresenterDal.dll</HintPath>
+    </Reference>
+    <Reference Include="PrintMultipleContracts">
+      <HintPath>DLLS\PrintMultipleContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Processes">
+      <HintPath>DLLS\Processes.dll</HintPath>
+    </Reference>
+    <Reference Include="Prototypes">
+      <HintPath>DLLS\Prototypes.dll</HintPath>
+    </Reference>
+    <Reference Include="ResposiblesLibrary">
+      <HintPath>DLLS\ResposiblesLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SearchContract">
+      <HintPath>DLLS\SearchContract.dll</HintPath>
+    </Reference>
+    <Reference Include="SearchCustomer">
+      <HintPath>DLLS\SearchCustomer.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecialOrder">
+      <HintPath>DLLS\SpecialOrder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.Calendar">
+      <HintPath>DLLS\System.Windows.Forms.Calendar.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLS\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TestDrives">
+      <HintPath>DLLS\TestDrives.dll</HintPath>
+    </Reference>
+    <Reference Include="UCBankSnifCheshbon">
+      <HintPath>DLLS\UCBankSnifCheshbon.dll</HintPath>
+    </Reference>
+    <Reference Include="UCColorComboBox">
+      <HintPath>DLLS\UCColorComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="UCContract">
+      <HintPath>DLLS\UCContract.dll</HintPath>
+    </Reference>
+    <Reference Include="ucCreditCard">
+      <HintPath>DLLS\ucCreditCard.dll</HintPath>
+    </Reference>
+    <Reference Include="UCCustomTextBoxes">
+      <HintPath>DLLS\UCCustomTextBoxes.dll</HintPath>
+    </Reference>
+    <Reference Include="UCDocViewerNew">
+      <HintPath>DLLS\UCDocViewerNew.dll</HintPath>
+    </Reference>
+    <Reference Include="UCFileViewer">
+      <HintPath>DLLS\UCFileViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="UCFormHeaders">
+      <HintPath>DLLS\UCFormHeaders.dll</HintPath>
+    </Reference>
+    <Reference Include="UCHanachot">
+      <HintPath>DLLS\UCHanachot.dll</HintPath>
+    </Reference>
+    <Reference Include="UCModel">
+      <HintPath>DLLS\UCModel.dll</HintPath>
+    </Reference>
+    <Reference Include="UCModelGr">
+      <HintPath>DLLS\UCModelGr.dll</HintPath>
+    </Reference>
+    <Reference Include="UCMotagComboBox">
+      <HintPath>DLLS\UCMotagComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="UCTnaeiShichrur">
+      <HintPath>DLLS\UCTnaeiShichrur.dll</HintPath>
+    </Reference>
+    <Reference Include="UCTosafot">
+      <HintPath>DLLS\UCTosafot.dll</HintPath>
+    </Reference>
+    <Reference Include="UpdateReleaseDate">
+      <HintPath>DLLS\UpdateReleaseDate.dll</HintPath>
+    </Reference>
+    <Reference Include="WantedCars">
+      <HintPath>DLLS\WantedCars.dll</HintPath>
+    </Reference>
+    <Reference Include="WCFPresenterService">
+      <HintPath>DLLS\WCFPresenterService.exe</HintPath>
+    </Reference>
+    <Reference Include="WCFRestartServices">
+      <HintPath>DLLS\WCFRestartServices.exe</HintPath>
+    </Reference>
+    <Reference Include="Win32_API">
+      <HintPath>DLLS\Win32_API.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFContracts">
+      <HintPath>DLLS\WPFContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFUserControls">
+      <HintPath>DLLS\WPFUserControls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarAppInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CarAppInstaller.Designer.cs">
+      <DependentUpon>CarAppInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarAppService.cs" />
+    <Compile Include="Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer.Designer.cs">
+      <DependentUpon>Installer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Installer.resx">
+      <DependentUpon>Installer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DLLS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="MyApplication.app, Version=1.0.0.0">
+      <Name>WCFDiscountsApp.vshost.exe.manifest</Name>
+      <HintPath>DLLS\WCFDiscountsApp.vshost.exe.manifest</HintPath>
+    </NativeReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

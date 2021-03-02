@@ -1,0 +1,25 @@
+// DO NOT DELETE THIS LINE - Lines beginning with 2 slashes are comments and disregarded
+ <HTML>
+<P DIR=RTL  style='text-align:right;direction:rtl;unicode-bidi:embed'>
+ 
+<TABLE BORDER="0">
+<TR> <TD> ##COND_ATTACHMENTS##  קובץ הצעת טרייד אין ראשונית מצורף  ##ENDCOND_ATTACHMENTS## </TD> </TR>
+</TABLE>
+
+<TABLE BORDER="0">
+<TR> <TD> פרטים: </TD>  <TD> </TD> </TR>
+<TR> <TD> תאריך בקשה:   </TD>  <TD> ##DATE1## </TD> </TR>
+<TR> <TD> שם הלקוח:   </TD>  <TD> ##CUST_NAME## </TD> </TR>
+<TR> <TD> טלפון:	  </TD>  <TD> ##CUST_TEL## </TD> </TR>
+<TR> <TD> 	 </TD>  <TD>  </TD> </TR>
+<TR> <TD> נציג המכירות:	  </TD>  <TD> ##OPEN_USERNAME## </TD> </TR>
+<TR> <TD> סוכנות:	  </TD>  <TD> ##DEALER_NAME## </TD> </TR>
+<TR> <TD> מותג:	  </TD>  <TD> ##MUTAG_DESC## </TD> </TR>
+<TR> <TD> טלפון של הנציג: </TD>  <TD> ##DEALER_TEL## </TD> </TR>
+</TABLE>
+
+תודה,
+
+</p>
+</HTML>
+ 

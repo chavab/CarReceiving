@@ -1,0 +1,28 @@
+// DO NOT DELETE THIS LINE - Lines beginning with 2 slashes are comments and disregarded   DIR=RTL style='text-align:right;direction:rtl;unicode-bidi:embed'
+ <HTML>
+ 
+<meta http-equiv=Content-Type content='text/html; charset=windows-1255'>
+<P dir=RTL  style='text-align:RIGHT ;direction:rtl;unicode-bidi:embed'>
+	<TABLE BORDER="0">
+	<TR> <TD><u> פרטי הלקוח: </u></TD>  <TD> </TD> </TR>
+	<TR> <TD>  שם הלקוח:    </TD>  <TD> ##CUST_NAME## </TD> </TR>
+	<TR> <TD> טלפון:	  </TD>  <TD> ##CUST_TEL## </TD> </TR>
+	##COND_CONTACT## <TR> <TD> פרטי איש קשר </TD>  <TD> ##CONTACT_PERSONS_DETAILS## </TD> </TR> ##ENDCOND_CONTACT##
+	<TR> <TD> יחידה נדונה: </TD>  <TD><B> ##UNIT_RESP## </B></TD> </TR>
+	<TR> <TD> סוג פעילות: </TD>  <TD><B> ##ACTIVITY_TYPE## </B></TD> </TR>
+	 </TABLE>
+	<TABLE BORDER="0">
+	 <TR> 
+	##COND_DATE2## <TD > תאריך התחלה: </TD> <TD> ##DATE2## </TD>   ##ENDCOND_DATE2## 
+	##COND_DATE3## <TD> תאריך יעד:  </TD> <TD> ##DATE3##   </TD> ##ENDCOND_DATE3## 
+	 </TR>
+	 </TABLE>
+	<B> ##IMPORTANT_MSG## </B> <BR> 
+	<TABLE BORDER="0">
+	##COND_COMMENTS## <TR> <TD VALIGN="TOP" >	 הערות:	 </TD>  <TD> ##COMMENTS##   </TD><TR> ##ENDCOND_COMMENTS##
+	
+	</TABLE>
+	בברכה, <BR>
+	 ##OPEN_USERNAME## 
+</p>
+</HTML>

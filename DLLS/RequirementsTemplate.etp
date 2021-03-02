@@ -1,0 +1,29 @@
+// DO NOT DELETE THIS LINE - Lines beginning with 2 slashes are comments and disregarded
+<HTML>
+<P DIR=RTL  style='text-align:right;direction:rtl;unicode-bidi:embed'>
+<TABLE BORDER="0">
+<TR> <TD> <B> פרטי הלקוח: </B> </TD>  <TD> </TD> </TR>
+<TR> <TD> שם הלקוח:   </TD>  <TD> ##CUST_NAME## </TD> </TR>
+<TR> <TD> טלפון:	  </TD>  <TD> ##CUST_TEL## </TD> </TR>
+##COND_CONTACT## <TR> <TD> פרטי איש קשר </TD>  <TD> ##CONTACT_PERSONS_DETAILS## </TD> </TR> ##ENDCOND_CONTACT##
+<TR> <TD> <B> פרטי הפעילות: </B> </TD>  <TD> </TD> </TR>
+<TR> <TD> סוג פעילות: </TD>  <TD> ##ACTIVITY_TYPE## </TD> </TR>
+<TR> <TD> משתמש פותח: </TD>  <TD> ##OPEN_USERNAME## </TD> </TR>
+<TR> <TD> גורם מטפל: </TD>  <TD> ##RESPONSIBLE_USERNAME## </TD> </TR>
+<TR> <TD> כמות: </TD>  <TD> ##QUANTITY## </TD> </TR>
+<TR> <TD> שווי כספי: </TD> <TD >&nbsp &nbsp ##MONEY_VALUE##   ₪ </TD> </TR>
+##COND_CONFIRMATION## <TR> <TD> אישור : </TD> <TD > ##CONFIRMATION## </TD> </TR> ##ENDCOND_CONFIRMATION##
+</TABLE>
+<TABLE BORDER="0">
+##COND_DATE1## <TR> <TD> תאריך פתיחה: </TD> <TD> ##DATE1##  </TD> </TR> ##ENDCOND_DATE1## 
+##COND_DATE2## <TR> <TD> תאריך התחלה: </TD> <TD> ##DATE2## </TD> </TR> ##ENDCOND_DATE2## 
+##COND_DATE3## <TR>  <TD> תאריך יעד:  </TD> <TD> ##DATE3##   </TD> </TR> ##ENDCOND_DATE3## 
+##COND_DATE4## <TR> <TD> תאריך סיום:  </TD> <TD> ##DATE4##   </TD> </TR> ##ENDCOND_DATE4##
+</TABLE>
+<B>##IMPORTANT_MSG##</B> <BR> 
+<TABLE BORDER="0">
+##COND_COMMENTS## <TR> <TD VALIGN="TOP" >	 הערות:	 </TD>  <TD> ##COMMENTS##  </TD> ##ENDCOND_COMMENTS##
+</TABLE>
+בברכה, מוקד שירות לקוחות
+</p>
+</HTML>

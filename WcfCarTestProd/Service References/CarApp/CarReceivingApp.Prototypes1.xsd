@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CarReceivingApp.Prototypes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CarReceivingApp.Prototypes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="LoginDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginDetails" nillable="true" type="tns:LoginDetails" />
+  <xs:simpleType name="STATUS_CODES">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FAIL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INVALID_TOKEN">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOGIN_UNAUTHRORIZED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNUSUAL_KM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WRONG_DESTINATION">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="STATUS_CODES" nillable="true" type="tns:STATUS_CODES" />
+  <xs:complexType name="ArrayOfShipmentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShipmentDetails" nillable="true" type="tns:ShipmentDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShipmentDetails" nillable="true" type="tns:ArrayOfShipmentDetails" />
+  <xs:complexType name="ShipmentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ShippingArrivalDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShippingNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ShippingSourceLocation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShipmentDetails" nillable="true" type="tns:ShipmentDetails" />
+  <xs:complexType name="ArrayOfCarByShipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarByShipment" nillable="true" type="tns:CarByShipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarByShipment" nillable="true" type="tns:ArrayOfCarByShipment" />
+  <xs:complexType name="CarByShipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsArrived" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDamaged" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEmailSent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsManuallyAdded" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNotSameDestination" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mutag" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarByShipment" nillable="true" type="tns:CarByShipment" />
+  <xs:complexType name="CarForValidation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mutag" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarForValidation" nillable="true" type="tns:CarForValidation" />
+  <xs:simpleType name="EmailType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Damage">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Status">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotArrived">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UnusalKM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MismatchCarToLicence">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MismatchCarToMotzar">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WrongDestination">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EmailType" nillable="true" type="tns:EmailType" />
+  <xs:complexType name="ArrayOfCarForDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarForDelivery" nillable="true" type="tns:CarForDelivery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarForDelivery" nillable="true" type="tns:ArrayOfCarForDelivery" />
+  <xs:complexType name="CarForDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerNameByContract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerNameByLicence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryDateAndTimeText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasComment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsForPrintOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mutag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondCustomerNameByLicence" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarForDelivery" nillable="true" type="tns:CarForDelivery" />
+  <xs:simpleType name="CustomerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="ContractCustomer" />
+      <xs:enumeration value="LicenseCustomer" />
+      <xs:enumeration value="SecondCustomer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CustomerType" nillable="true" type="tns:CustomerType" />
+  <xs:complexType name="CarDeliveryDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Commision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contract" type="xs:int" />
+      <xs:element minOccurs="0" name="ContractFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dealer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeliveryMethod" type="tns:DeliveryConfirmationMethod" />
+      <xs:element minOccurs="0" name="DeliveryUserForHarvut" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Documents" nillable="true" type="q1:ArrayOfKeyValueOfEDocumentTypebooleantexuRMHh" />
+      <xs:element minOccurs="0" name="EmployeeFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsurancePolicyNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="IsHarvutBankaeit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHarvutBankaeitReturnForm" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRental" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRentalReturnForm" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KmNum" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mutag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivingCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivingCustomerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivingCustomerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivingCustomerPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceivingCustomerType" type="tns:CustomerType" />
+      <xs:element minOccurs="0" name="ReleaseCondition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="SelectedInsuranceCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarDeliveryDetails" nillable="true" type="tns:CarDeliveryDetails" />
+  <xs:simpleType name="DeliveryConfirmationMethod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Email">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHONE">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeliveryConfirmationMethod" nillable="true" type="tns:DeliveryConfirmationMethod" />
+  <xs:simpleType name="EDocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CustomerID">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">204</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Licence">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">121</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CarInsurance">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Poa">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">205</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TradeIn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">206</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mesira">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HarvutBankaeit">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">148</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Rental">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">207</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EDocumentType" nillable="true" type="tns:EDocumentType" />
+  <xs:complexType name="InitDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlockDeliveryKm" type="xs:int" />
+      <xs:element minOccurs="0" name="DoubleConfirmKm" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LocalInstallationOptions" nillable="true" type="q2:ArrayOfKeyValueOfintstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InitDetails" nillable="true" type="tns:InitDetails" />
+  <xs:complexType name="ArrayOfCarForControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarForControl" nillable="true" type="tns:CarForControl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarForControl" nillable="true" type="tns:ArrayOfCarForControl" />
+  <xs:complexType name="CarForControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarDamageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Commision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DaysFromRelease" type="xs:int" />
+      <xs:element minOccurs="0" name="DeliveryDateAndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasComment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasDamageFromCarrier" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenceNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelDiscription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mutag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Shilda" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnusalKmEmailSent" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarForControl" nillable="true" type="tns:CarForControl" />
+  <xs:complexType name="ArrayOfLocalAddition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LocalAddition" nillable="true" type="tns:LocalAddition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocalAddition" nillable="true" type="tns:ArrayOfLocalAddition" />
+  <xs:complexType name="LocalAddition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocalAddition" nillable="true" type="tns:LocalAddition" />
+  <xs:complexType name="CarForControlDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarDamageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="CarKM" type="xs:int" />
+      <xs:element minOccurs="0" name="CleaningComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasDamageFromCarrier" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCarBookExists" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCarClean" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDamages" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDashboardLightOn" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUnusalKM" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenceNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenceNumInRishayon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalAdditions" nillable="true" type="tns:ArrayOfLocalAddition" />
+      <xs:element minOccurs="0" name="Mutag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectedSpareTireID" type="xs:int" />
+      <xs:element minOccurs="0" name="TireSize" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarForControlDetails" nillable="true" type="tns:CarForControlDetails" />
+  <xs:complexType name="ArrayOfComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Comment" nillable="true" type="tns:Comment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComment" nillable="true" type="tns:ArrayOfComment" />
+  <xs:complexType name="Comment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsCurrentUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WriterName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Comment" nillable="true" type="tns:Comment" />
+</xs:schema>

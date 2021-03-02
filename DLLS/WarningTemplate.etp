@@ -1,0 +1,14 @@
+// DO NOT DELETE THIS LINE - Lines beginning with 2 slashes are comments and disregarded 
+ <HTML>
+<P DIR=RTL  style='text-align:right;direction:rtl;unicode-bidi:embed'>
+
+##TO_USER## שלום,	   <BR> 
+שם לקוח: ##CUST_NAME## ##COND_CAR## עם רכב ##CAR_MODEL_DESC## , רישוי מספר ##CAR_LICENSE## ##ENDCOND_CAR## פנה למוקד שרות הלקוחות בתאריך ##DATE0##.  <BR> 
+פנייתו עוסקת ב: "##ACTIVITY_TYPE##". הפנייה הועברה לטיפולך בתאריך ##DATE2##. <BR> 
+נא עדכן כיצד פנייתו של הלקוח מטופלת, בהתאם לדרישה שהועברה אליך. <BR> 
+ לתשומת ליבך, במידה ולא יועבר אלינו עדכון עד לתאריך  ##ESCALATION_DATE## , הטיפול בפניה יועבר למנהלך הישיר. <BR> 
+<BR> 
+לטיפולך המסור נודה <BR> 
+בברכה, ##OPEN_USERNAME##  <BR> 
+</p>
+</HTML>

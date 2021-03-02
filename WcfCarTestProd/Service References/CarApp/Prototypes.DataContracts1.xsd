@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Prototypes.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Prototypes.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfDamageOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DamageOut" nillable="true" type="tns:DamageOut" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDamageOut" nillable="true" type="tns:ArrayOfDamageOut" />
+  <xs:complexType name="DamageOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DamageDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMediaRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportTypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DamageOut" nillable="true" type="tns:DamageOut" />
+  <xs:complexType name="ArrayOfReason">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Reason" nillable="true" type="tns:Reason" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReason" nillable="true" type="tns:ArrayOfReason" />
+  <xs:complexType name="Reason">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="REASON_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REASON_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Reason" nillable="true" type="tns:Reason" />
+  <xs:complexType name="ArrayOfResponsibilty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Responsibilty" nillable="true" type="tns:Responsibilty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponsibilty" nillable="true" type="tns:ArrayOfResponsibilty" />
+  <xs:complexType name="Responsibilty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReportType" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Responsibilty" nillable="true" type="tns:Responsibilty" />
+  <xs:complexType name="ArrayOfPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Position" nillable="true" type="tns:Position" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPosition" nillable="true" type="tns:ArrayOfPosition" />
+  <xs:complexType name="Position">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="POSITION_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POSITION_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPORT_TYPE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Position" nillable="true" type="tns:Position" />
+  <xs:complexType name="SaveResult">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ErrorFields" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IsSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveResult" nillable="true" type="tns:SaveResult" />
+  <xs:complexType name="ArrayOfHistoryDamage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoryDamage" nillable="true" type="tns:HistoryDamage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoryDamage" nillable="true" type="tns:ArrayOfHistoryDamage" />
+  <xs:complexType name="HistoryDamage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DamageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasMedia" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PositionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PositionDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoryDamage" nillable="true" type="tns:HistoryDamage" />
+  <xs:complexType name="ArrayOfMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Media" nillable="true" type="tns:Media" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedia" nillable="true" type="tns:ArrayOfMedia" />
+  <xs:complexType name="Media">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Media" nillable="true" type="tns:Media" />
+  <xs:complexType name="ParamsForConfirmSelectDamage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BrandAndVehicle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Chassis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsWithoutExecute" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PositionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WithoutExecuteComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WithoutExecuteSwitch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkerId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParamsForConfirmSelectDamage" nillable="true" type="tns:ParamsForConfirmSelectDamage" />
+  <xs:complexType name="ArrayOfDamageForDeliveryConfirm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DamageForDeliveryConfirm" nillable="true" type="tns:DamageForDeliveryConfirm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDamageForDeliveryConfirm" nillable="true" type="tns:ArrayOfDamageForDeliveryConfirm" />
+  <xs:complexType name="DamageForDeliveryConfirm">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DamageCNF">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsWithoutExecute" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WithoutExecuteComment" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DamageForDeliveryConfirm" nillable="true" type="tns:DamageForDeliveryConfirm" />
+  <xs:complexType name="DamageCNF">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DamageRepair">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DamageText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TyotaNbr" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DamageCNF" nillable="true" type="tns:DamageCNF" />
+  <xs:complexType name="DamageRepair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Damage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DamageStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasMedia" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MustReport" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PositionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DamageRepair" nillable="true" type="tns:DamageRepair" />
+</xs:schema>

@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="CarRecivingApp.Prototypes" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="CarRecivingApp.Prototypes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="CarRecivingApp.Prototypes/Imports">
+      <xsd:import namespace="CarRecivingApp.Prototypes" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CarReceivingApp.Prototypes" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Prototypes.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetShipments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipments" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetShipments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShipmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarsByShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsByShipment" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarsByShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsByShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmCarReception_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCarReception" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmCarReception_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCarReceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RejectCarReception_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectCarReception" />
+  </wsdl:message>
+  <wsdl:message name="IService_RejectCarReception_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectCarReceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarForValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarForValidation" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarForValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarForValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CarManuallyToShipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CarManuallyToShipment" />
+  </wsdl:message>
+  <wsdl:message name="IService_CarManuallyToShipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CarManuallyToShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMailTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMailTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMailTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMailTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendDamageEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendDamageEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendDamageEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendDamageEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarsForDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsForDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarsForDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsForDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDelivaryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelivaryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDelivaryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelivaryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AcceptCarForDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptCarForDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IService_AcceptCarForDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcceptCarForDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInsuranceCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCompanies" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInsuranceCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInsuranceCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadDocumentFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDocumentFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadDocumentFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDocumentFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteDocumentFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteDocumentFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocumentFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDeliveryPdf_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryPdf" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDeliveryPdf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryPdfResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDeliverySignature_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDeliverySignature" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDeliverySignature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDeliverySignatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInit" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetInit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarsForControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsForControl" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarsForControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarsForControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpareTireOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpareTireOption" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpareTireOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpareTireOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarLocalAdditions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarLocalAdditions" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarLocalAdditions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarLocalAdditionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarForControlDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarForControlDetails" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCarForControlDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarForControlDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmCarControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCarControl" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmCarControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmCarControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SetKM_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetKM" />
+  </wsdl:message>
+  <wsdl:message name="IService_SetKM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetKMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmKM_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmKM" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmKM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmKMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComments" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertComment" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDamages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamages" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDamages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReasons" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetResponsibilities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponsibilities" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetResponsibilities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponsibilitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPositions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPositions" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPositions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPositionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDamage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDamage" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveDamage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDamageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveMediaFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaFiles" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveMediaFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMediaFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetHistoryDamage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryDamage" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetHistoryDamage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryDamageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaForDamage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaForDamage" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaForDamage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaForDamageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmSelectDamage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmSelectDamage" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmSelectDamage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmSelectDamageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDamageCNF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCNF" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDamageCNF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDamageCNFResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/Login" message="tns:IService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/LoginResponse" message="tns:IService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/CheckStatus" message="tns:IService_CheckStatus_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/CheckStatusResponse" message="tns:IService_CheckStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShipments">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetShipments" message="tns:IService_GetShipments_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetShipmentsResponse" message="tns:IService_GetShipments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsByShipment">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarsByShipment" message="tns:IService_GetCarsByShipment_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarsByShipmentResponse" message="tns:IService_GetCarsByShipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCarReception">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmCarReception" message="tns:IService_ConfirmCarReception_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmCarReceptionResponse" message="tns:IService_ConfirmCarReception_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectCarReception">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/RejectCarReception" message="tns:IService_RejectCarReception_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/RejectCarReceptionResponse" message="tns:IService_RejectCarReception_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarForValidation">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarForValidation" message="tns:IService_GetCarForValidation_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarForValidationResponse" message="tns:IService_GetCarForValidation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CarManuallyToShipment">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/CarManuallyToShipment" message="tns:IService_CarManuallyToShipment_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/CarManuallyToShipmentResponse" message="tns:IService_CarManuallyToShipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailTemplate">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetMailTemplate" message="tns:IService_GetMailTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetMailTemplateResponse" message="tns:IService_GetMailTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDamageEmail">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/SendDamageEmail" message="tns:IService_SendDamageEmail_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/SendDamageEmailResponse" message="tns:IService_SendDamageEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/SendEmail" message="tns:IService_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/SendEmailResponse" message="tns:IService_SendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsForDelivery">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarsForDelivery" message="tns:IService_GetCarsForDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarsForDeliveryResponse" message="tns:IService_GetCarsForDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDelivaryDetails">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetDelivaryDetails" message="tns:IService_GetDelivaryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetDelivaryDetailsResponse" message="tns:IService_GetDelivaryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptCarForDelivery">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/AcceptCarForDelivery" message="tns:IService_AcceptCarForDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/AcceptCarForDeliveryResponse" message="tns:IService_AcceptCarForDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceCompanies">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetInsuranceCompanies" message="tns:IService_GetInsuranceCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetInsuranceCompaniesResponse" message="tns:IService_GetInsuranceCompanies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDocumentFile">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/LoadDocumentFile" message="tns:IService_LoadDocumentFile_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/LoadDocumentFileResponse" message="tns:IService_LoadDocumentFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFile">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/UploadDocumentFile" message="tns:IService_UploadDocumentFile_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/UploadDocumentFileResponse" message="tns:IService_UploadDocumentFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocumentFile">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/DeleteDocumentFile" message="tns:IService_DeleteDocumentFile_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/DeleteDocumentFileResponse" message="tns:IService_DeleteDocumentFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryPdf">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetDeliveryPdf" message="tns:IService_GetDeliveryPdf_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetDeliveryPdfResponse" message="tns:IService_GetDeliveryPdf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDeliverySignature">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/SaveDeliverySignature" message="tns:IService_SaveDeliverySignature_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/SaveDeliverySignatureResponse" message="tns:IService_SaveDeliverySignature_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInit">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetInit" message="tns:IService_GetInit_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetInitResponse" message="tns:IService_GetInit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarsForControl">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarsForControl" message="tns:IService_GetCarsForControl_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarsForControlResponse" message="tns:IService_GetCarsForControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpareTireOption">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetSpareTireOption" message="tns:IService_GetSpareTireOption_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetSpareTireOptionResponse" message="tns:IService_GetSpareTireOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarLocalAdditions">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarLocalAdditions" message="tns:IService_GetCarLocalAdditions_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarLocalAdditionsResponse" message="tns:IService_GetCarLocalAdditions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarForControlDetails">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarForControlDetails" message="tns:IService_GetCarForControlDetails_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetCarForControlDetailsResponse" message="tns:IService_GetCarForControlDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmCarControl">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmCarControl" message="tns:IService_ConfirmCarControl_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmCarControlResponse" message="tns:IService_ConfirmCarControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKM">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/SetKM" message="tns:IService_SetKM_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/SetKMResponse" message="tns:IService_SetKM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmKM">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmKM" message="tns:IService_ConfirmKM_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmKMResponse" message="tns:IService_ConfirmKM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetComments" message="tns:IService_GetComments_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetCommentsResponse" message="tns:IService_GetComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertComment">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/InsertComment" message="tns:IService_InsertComment_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/InsertCommentResponse" message="tns:IService_InsertComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDamages">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetDamages" message="tns:IService_GetDamages_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetDamagesResponse" message="tns:IService_GetDamages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReasons">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetReasons" message="tns:IService_GetReasons_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetReasonsResponse" message="tns:IService_GetReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResponsibilities">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetResponsibilities" message="tns:IService_GetResponsibilities_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetResponsibilitiesResponse" message="tns:IService_GetResponsibilities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPositions">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetPositions" message="tns:IService_GetPositions_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetPositionsResponse" message="tns:IService_GetPositions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDamage">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/SaveDamage" message="tns:IService_SaveDamage_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/SaveDamageResponse" message="tns:IService_SaveDamage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMediaFiles">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/SaveMediaFiles" message="tns:IService_SaveMediaFiles_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/SaveMediaFilesResponse" message="tns:IService_SaveMediaFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryDamage">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetHistoryDamage" message="tns:IService_GetHistoryDamage_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetHistoryDamageResponse" message="tns:IService_GetHistoryDamage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaForDamage">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetMediaForDamage" message="tns:IService_GetMediaForDamage_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetMediaForDamageResponse" message="tns:IService_GetMediaForDamage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmSelectDamage">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmSelectDamage" message="tns:IService_ConfirmSelectDamage_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/ConfirmSelectDamageResponse" message="tns:IService_ConfirmSelectDamage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDamageCNF">
+      <wsdl:input wsaw:Action="CarRecivingApp.Prototypes/IService/GetDamageCNF" message="tns:IService_GetDamageCNF_InputMessage" />
+      <wsdl:output wsaw:Action="CarRecivingApp.Prototypes/IService/GetDamageCNFResponse" message="tns:IService_GetDamageCNF_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

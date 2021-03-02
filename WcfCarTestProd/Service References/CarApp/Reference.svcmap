@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="09d69386-2e48-4c23-b4fc-c4770eeead4c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CarRecivingApp.Prototypes1.wsdl" MetadataType="Wsdl" ID="129b7be0-4ebe-4e20-81ad-4614fa2d3711" SourceId="1" SourceUrl="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="5c778de5-c0d5-4f53-bb7f-f2109818b79b" SourceId="1" SourceUrl="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" />
+    <MetadataFile FileName="CarRecivingApp.Prototypes1.xsd" MetadataType="Schema" ID="13ffb197-eeb3-4761-aacb-d8b0787fcbe1" SourceId="1" SourceUrl="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="279a432b-77a1-4d46-9a6d-57d32e5a769f" SourceId="1" SourceUrl="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" />
+    <MetadataFile FileName="CarReceivingApp.Prototypes1.xsd" MetadataType="Schema" ID="0142d8d4-2dde-4e11-98a9-9c5ce48c77f2" SourceId="1" SourceUrl="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="ee6e124c-4617-43dd-b0f4-0e0e2b0c2af1" SourceId="1" SourceUrl="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" />
+    <MetadataFile FileName="Prototypes.DataContracts1.xsd" MetadataType="Schema" ID="3d9f1145-1c74-45a1-877a-13c447aa361b" SourceId="1" SourceUrl="net.tcp://190.200.10.34:9033/WCFCarReceivingApp/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
